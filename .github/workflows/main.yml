@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with: 
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server: ${{ secrets.HOST }}
+        ftp-username: ${{ secrets.USERNAME }}
+        ftp-password: ${{ secrets.PASSWORD }}
