@@ -120,12 +120,8 @@ window.onload = function () {
                 for (let i = 0; i < this.n; i++) {
                     this.segments[i].show();
                 }
-                c.strokeStyle =
-                    "hsl(" +
-                    (this.rand * 60 + 180) +
-                    ",100%," +
-                    (this.rand * 60 + 25) +
-                    "%)";
+                // c.strokeStyle = "hsl(" + (this.rand * 60 + 180) + ",100%," + (this.rand * 60 + 25) + "%)";
+                c.strokeStyle = "hsl(" + (this.rand * 30 + 270) + ",100%," + (this.rand * 60 + 25) + "%)";
                 c.lineWidth = this.rand * 2;
                 c.lineCap = "round";
                 c.lineJoin = "round";
@@ -146,10 +142,12 @@ window.onload = function () {
         }
     }
 
-    let maxl = 300,
+
+    let maxl = 1000, // numero maximo de tentaculos a distancia = 300
         minl = 50,
-        n = 30,
-        numt = 500,
+        n = 55, // numero de angulos del tentaculo // = 30
+        // numt = 500,
+        numt = 100,
         tent = [],
         clicked = false,
         target = { x: 0, y: 0 },
@@ -198,7 +196,8 @@ window.onload = function () {
             0,
             2 * Math.PI
         );
-        c.fillStyle = "hsl(210,100%,80%)";
+        // c.fillStyle = "hsl(210,100%,80%)";
+        c.fillStyle = "hsl(0,0%,80%)";
         c.fill();
 
         for (i = 0; i < numt; i++) {
