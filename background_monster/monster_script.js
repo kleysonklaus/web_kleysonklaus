@@ -136,7 +136,8 @@ window.onload = function () {
                 c.fillStyle = "white";
             } else {
                 c.arc(this.x, this.y, this.rand * 2, 0, 2 * Math.PI);
-                c.fillStyle = "darkcyan";
+                // c.fillStyle = "darkcyan";
+                c.fillStyle = "purple";
             }
             c.fill();
         }
