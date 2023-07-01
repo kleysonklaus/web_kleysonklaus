@@ -214,11 +214,15 @@ window.onload = function () {
     canvas.addEventListener(
         "mousemove",
         function (e) {
-            last_mouse.x = mouse.x;
-            last_mouse.y = mouse.y;
+            // para la nueva configuracion se puso el if del click, quitar si no se desea
+            if (clicked) {
 
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop;
+                last_mouse.x = mouse.x;
+                last_mouse.y = mouse.y;
+
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+            }
         },
         false
     );
@@ -240,6 +244,8 @@ window.onload = function () {
         "mouseup",
         function (e) {
             clicked = false;
+            mouse.x = false; // nueva configuracion, qutiar si no se desea
+            mouse.y = false; // nueva configuracion, qutiar si no se desea
         },
         false
     );
