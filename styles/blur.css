@@ -24,7 +24,7 @@
 
 .contenedor .h1 {
     text-align: center;
-    color: white;
+    color: red;
     font-size: 36px;
     margin-top: 40vh;
 }
@@ -46,4 +46,52 @@
 .redes-sociales li a {
     color: #000;
     font-size: 24px;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.phone-container {
+    width: 360px;
+    /* Ancho del "celular" */
+    height: 640px;
+    /* Alto del "celular" */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.app-list {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.app-item {
+    text-align: center;
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
 }
