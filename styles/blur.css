@@ -22,9 +22,28 @@
     z-index: -1;
 }
 
-h1 {
+.contenedor .h1 {
     text-align: center;
     color: white;
     font-size: 36px;
     margin-top: 40vh;
+}
+
+/* estilos para redes sociales */
+
+.redes-sociales {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-sociales li {
+    margin: 0 10px;
+}
+
+.redes-sociales li a {
+    color: #000;
+    font-size: 24px;
 }
