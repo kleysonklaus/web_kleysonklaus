@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./
-          server-dir: /public_html/
+          server-dir: public_html/
           log-level: standard
           exclude: |
             **/.git*
