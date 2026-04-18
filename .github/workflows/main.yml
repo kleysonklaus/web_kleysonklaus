@@ -1,19 +1,40 @@
 name: publish web
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+concurrency:
+  group: publish-web-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  ftp-deploy:
+    name: FTP deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with: 
-        ftp-server: ${{ secrets.HOST }}
-        ftp-username: ${{ secrets.USERNAME }}
-        ftp-password: ${{ secrets.PASSWORD }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy website files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: ./
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/_workspace/**
+            **/.venv/**
+            **/node_modules/**
+            .cpanel.yml
+            README.md
