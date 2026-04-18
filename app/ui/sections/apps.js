@@ -38,7 +38,7 @@ export const apps = [
         ],
         stats: [
             { label: 'Descargas', value: '100k+' },
-            { label: 'Calificacion', value: '3.7' },
+            { label: 'Calificacion', value: '4.6' },
             { label: 'Actualizacion', value: '18 may 2022' },
         ],
         stores: {
