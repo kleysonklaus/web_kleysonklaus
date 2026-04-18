@@ -27,7 +27,7 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: ./
+          local-dir: /public_html/
           log-level: standard
           exclude: |
             **/.git*
