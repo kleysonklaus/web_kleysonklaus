@@ -1,0 +1,43 @@
+.apps-section {
+    padding-bottom: 5rem;
+}
+
+.apps-section__intro {
+    max-width: none;
+}
+
+.apps-section__intro .section__intro {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 1.25rem 3rem;
+    align-items: end;
+}
+
+.apps-section__intro .section__intro .eyebrow {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+.apps-section__intro .section__intro h2,
+.apps-section__intro .section__intro>p:last-child {
+    max-width: none;
+}
+
+.apps-section__intro p,
+.apps-section__footnote p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.apps-section__intro .section__intro>p:last-child {
+    margin-top: 0;
+}
+
+.apps-showcase {
+    margin-top: 2rem;
+}
+
+.apps-section__footnote {
+    margin-top: 1rem;
+}

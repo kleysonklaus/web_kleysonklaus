@@ -1,0 +1,47 @@
+.section {
+    padding: 2rem 0 5rem;
+}
+
+.section__intro {
+    max-width: 62ch;
+    margin-bottom: 2rem;
+}
+
+.section__intro h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+}
+
+.section__intro p {
+    margin-top: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.capabilities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.capability {
+    padding: 1.4rem;
+}
+
+.capability h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.capability p {
+    margin-top: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.capability__kicker {
+    margin-bottom: 0.15rem;
+}

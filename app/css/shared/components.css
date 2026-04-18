@@ -1,0 +1,123 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 1.25rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+}
+
+.button--primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #07111f;
+}
+
+.button--secondary {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.button--ghost {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: transparent;
+    min-height: 44px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.eyebrow::before {
+    content: '';
+    width: 42px;
+    height: 1px;
+    background: currentColor;
+}
+
+.stat-card,
+.panel,
+.capability,
+.app-card,
+.step-card,
+.contact-card,
+.contact-panel,
+.footer-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+}
+
+.panel__label,
+.capability__kicker,
+.app-card__tag,
+.step-card__kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.panel__label {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--accent-warm);
+}
+
+.capability__kicker,
+.app-card__tag,
+.step-card__kicker {
+    background: rgba(47, 184, 224, 0.14);
+    color: #8edfff;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat-card strong,
+.contact-card strong {
+    display: block;
+}
+
+.stat-card span,
+.contact-card span,
+.contact-panel__list span {
+    color: var(--muted);
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

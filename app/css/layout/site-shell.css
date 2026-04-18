@@ -1,0 +1,200 @@
+.container {
+    width: min(calc(100% - 2rem), var(--container));
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(18px);
+    background: rgba(4, 10, 18, 0.55);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header__inner {
+    display: grid;
+    grid-template-columns: minmax(240px, 1.35fr) auto auto;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 104px;
+    padding: 0.8rem 0;
+}
+
+.brand {
+    display: grid;
+    gap: 0.2rem;
+    text-decoration: none;
+}
+
+.brand__title {
+    position: relative;
+    display: inline-block;
+    --brand-float-distance: 0.18em;
+    --brand-float-duration: 5.2s;
+    --brand-float-delay: 0.3s;
+    --brand-reflection-opacity: 1;
+    --brand-reflection-scale: 220%;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 2.95rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: color-mix(in srgb, var(--text) 92%, #f8fbff 8%);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0), 0 16px 28px rgba(5, 10, 18, 0.18);
+    overflow: hidden;
+}
+
+.brand__title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background: linear-gradient(112deg, transparent 12%, rgba(255, 255, 255, 0.12) 28%, rgba(255, 255, 255, 0.98) 42%, rgba(225, 244, 255, 1) 50%, rgba(173, 226, 255, 0.95) 58%, rgba(255, 255, 255, 0.18) 70%, transparent 84%);
+    background-size: var(--brand-reflection-scale) 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    mix-blend-mode: screen;
+    opacity: var(--brand-reflection-opacity);
+    transform: translateX(-145%);
+    animation: brand-reflection 5s cubic-bezier(0.22, 0.06, 0.18, 1) 1.6s infinite;
+    pointer-events: none;
+}
+
+.brand__title-copy {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    white-space: nowrap;
+    will-change: transform;
+    animation: brand-float var(--brand-float-duration) cubic-bezier(0.45, 0.05, 0.55, 0.95) calc(var(--brand-float-delay) + 0.2s) infinite;
+}
+
+.brand__char,
+.brand__space {
+    display: inline-block;
+}
+
+.brand__char {
+    opacity: 0;
+    transform: translate3d(0, -0.9em, 0);
+    filter: blur(6px);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    animation: brand-letter-arrival 680ms cubic-bezier(0.2, 0.82, 0.25, 1) forwards;
+    animation-delay: calc(var(--char-index, 0) * 60ms);
+}
+
+.brand__space {
+    width: 0.3em;
+}
+
+.brand__title--header {
+    font-size: clamp(2rem, 3vw, 2.95rem);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    justify-content: flex-end;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current='page'] {
+    color: var(--text);
+}
+
+@keyframes brand-float {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    20% {
+        transform: translate3d(0, calc(var(--brand-float-distance) * -0.38), 0);
+    }
+
+    50% {
+        transform: translate3d(0, calc(var(--brand-float-distance) * -1), 0);
+    }
+
+    80% {
+        transform: translate3d(0, calc(var(--brand-float-distance) * -0.38), 0);
+    }
+}
+
+@keyframes brand-letter-arrival {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -0.9em, 0);
+        filter: blur(6px);
+    }
+
+    68% {
+        opacity: 1;
+        transform: translate3d(0, 0.08em, 0);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+    }
+}
+
+@keyframes brand-reflection {
+
+    0%,
+    56%,
+    100% {
+        transform: translateX(-145%);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    76% {
+        opacity: 1;
+    }
+
+    96% {
+        transform: translateX(138%);
+        opacity: 0.92;
+    }
+
+    100% {
+        transform: translateX(138%);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .brand__title-copy,
+    .brand__char {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .brand__title::after {
+        animation: none;
+        opacity: 0;
+        transform: translateX(-145%);
+    }
+}

@@ -1,0 +1,48 @@
+.hero {
+    padding: 5.5rem 0 4rem;
+}
+
+.hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.hero h1 {
+    max-width: 12ch;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.hero__lead {
+    max-width: 62ch;
+    margin-top: 1.2rem;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+.hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.stat-card {
+    padding: 1.15rem;
+}
+
+.stat-card strong {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.stat-card span {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
