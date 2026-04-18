@@ -9,7 +9,7 @@
             { href: '#contacto', label: 'Contacto' }
         ],
         hero: {
-            title: 'Soluciones simples y fáciles',
+            title: 'Avanzando ...',
             lead: 'Desarrollo, publicicón y organización de un catalogo de aplicaciones.',
             stats: [
                 {
