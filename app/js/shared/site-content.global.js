@@ -1,7 +1,7 @@
 (function (scope) {
     scope.__KK_SITE_CONTENT__ = {
         brand: {
-            name: 'Kleyson Klaus Main'
+            name: 'Kleyson Klaus Main from feature branch',
         },
         navigationItems: [
             { href: '#marca', label: 'Kleyson' },
