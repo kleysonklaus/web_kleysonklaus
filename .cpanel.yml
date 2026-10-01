@@ -2,5 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kleysonk/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/cp index.html "$DEPLOYPATH"
+    - /bin/cp .htaccess "$DEPLOYPATH"
+    - /bin/cp app-ads.txt "$DEPLOYPATH"
+    - /bin/cp -R styles "$DEPLOYPATH"
+    - /bin/cp -R app "$DEPLOYPATH"

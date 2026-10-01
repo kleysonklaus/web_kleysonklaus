@@ -1,0 +1,72 @@
+.contact-section {
+    padding-top: 1rem;
+}
+
+.contact-minimal {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    gap: 1.5rem;
+    padding: 1.7rem;
+}
+
+.contact-minimal__copy h2 {
+    max-width: 14ch;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.contact-minimal__lead {
+    max-width: 56ch;
+    margin-top: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.contact-minimal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-minimal__meta {
+    display: grid;
+    align-content: start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-minimal__eyebrow {
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.contact-minimal__link {
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact-minimal__link:hover,
+.contact-minimal__link:focus-visible {
+    color: var(--accent);
+}
+
+.contact-minimal__meta p,
+.contact-minimal__note {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.contact-minimal__note {
+    font-size: 0.92rem;
+}

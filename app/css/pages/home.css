@@ -1,0 +1,80 @@
+@media (max-width: 1080px) {
+
+    .site-header__inner {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .hero__layout,
+    .contact-minimal,
+    .footer-band,
+    .app-showcase-panel__hero,
+    .app-showcase-panel__brand,
+    .capabilities,
+    .apps-section__intro .section__intro {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-band {
+        grid-template-areas:
+            'brand'
+            'socials'
+            'nav';
+    }
+
+    .hero h1 {
+        max-width: 14ch;
+    }
+}
+
+@media (max-width: 760px) {
+    .site-header__inner {
+        align-items: flex-start;
+        justify-items: start;
+        padding: 1rem 0;
+    }
+
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .hero {
+        padding-top: 4rem;
+    }
+
+    .app-showcase-panel {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+
+    .app-showcase-panel__stats,
+    .app-showcase-panel__gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .app-showcase-panel__gallery {
+        grid-auto-columns: 84vw;
+    }
+
+    .app-showcase-panel__gallery-heading {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .hero__stats {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-band__socials {
+        justify-content: flex-start;
+    }
+
+    .footer-band__nav {
+        gap: 0.65rem;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
